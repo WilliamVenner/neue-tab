@@ -8,6 +8,6 @@ Open `config.js` and add your own categories and links using the template provid
 
 ### Screenshots
 
-![](https://raw.githubusercontent.com/WilliamVenner/neue-tab/master/Screenshot1.jpg)
+![](https://i.imgur.com/44wQ4Mj.jpg)
 
-![](https://raw.githubusercontent.com/WilliamVenner/neue-tab/master/Screenshot2.gif)
+![](https://i.imgur.com/MOwfx2a.gif)
