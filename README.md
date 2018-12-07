@@ -1,12 +1,12 @@
 ![](https://i.imgur.com/44wQ4Mj.jpg)
 
-## Neue Tab
+# Neue Tab
 
 New Tab page I made for myself which people were asking to be open-sourced.
 
 ![](https://i.imgur.com/MOwfx2a.gif)
 
-### FAQ
+## FAQ
 
 **What are the three progress bars?**
 
@@ -26,7 +26,7 @@ The wallpaper changes based upon the current weekday.
 
 You can find them in `assets/img/wallpaper/`
 
-### Installation
+## Installation
 
 First, clone/download the repository somewhere to your computer
 
@@ -37,6 +37,6 @@ Then, install a New Tab page changer extension/plugin for your browser, if neces
 
 After, change your new tab page to the appropriate URL. Locally-stored files use URLs look like `file:///C:/Users/Billy/Desktop/website.html`
 
-### Configuration
+## Configuration
 
 Open `config.js` and add your own categories and links using the template provided.
