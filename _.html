@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Tab</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script type="text/javascript" src="config.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let wallpapers = ["Monday.jpg","Tuesday.jpg","Wednesday.jpg","Thursday.jpg","Friday.jpg","Saturday.jpg","Sunday.jpg"];
+			document.getElementsByTagName("body")[0].style.backgroundImage = "url(assets/img/wallpapers/" + wallpapers[(new Date()).getDay()] + ")";
+		</script>
+		<div id="dimmer"></div>
+		<div id="center"><div><div>
+			<table id="container">
+				<tbody>
+					<tr><td>
+						<div id="clock">
+							<div>
+								<span id="hour">12</span><span class="colon">:</span><span id="minute">00</span><span class="colon">:</span><span id="second">00</span><span id="am-pm"> AM</span>
+							</div>
+							<div>Thursday 01/01/1970</div><br>
+								<div id="clock-progress-bars">
+								<div class="progress day"><div></div></div>
+								<div class="progress hour"><div></div></div>
+								<div class="progress minute"><div></div></div>
+							</div>
+						</div>
+					</td></tr>
+					<tr><td style="text-align:center">
+						<table id="links"><tbody></tbody></table>
+						<script type="text/javascript">
+							let row = null;
+							let category_i = 0;
+							for (category_name in config.Links) {
+								category_i += 1;
+								if (row == null || category_i == config.ColumnsPerRow + 1) {
+									category_i = 1;
+									row = document.createElement("tr");
+									document.querySelector("#links > tbody").appendChild(row);
+								}
+
+								let td = document.createElement("td");
+								let header = document.createElement("div");
+								header.classList.add("header");
+								header.appendChild(document.createTextNode(category_name));
+								td.appendChild(header);
+
+								let created_br = null;
+								for (item_name in config.Links[category_name]) {
+									let item = config.Links[category_name][item_name];
+
+									let link = document.createElement("a");
+									link.setAttribute("href", item[0]);
+
+									let icon = document.createElement("img");
+									icon.setAttribute("src", "assets/img/icons/" + item[1]);
+									link.appendChild(icon);
+
+									let span = document.createElement("span");
+									span.appendChild(document.createTextNode(item_name));
+									link.appendChild(span);
+
+									td.appendChild(link);
+
+									created_br = document.createElement("br");
+									td.appendChild(created_br);
+								}
+								if (created_br != null) td.removeChild(created_br);
+
+								row.appendChild(td);
+							}
+						</script>
+					</td></tr>
+				</tbody>
+			</table>
+		</div></div></div>
+		<div id="fader"><div>Loading...</div></div>
+		<script type="text/javascript" src="assets/js/lib/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/newtab.js"></script>
+	</body>
+</html>

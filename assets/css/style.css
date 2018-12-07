@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik|Montserrat');
+
+/* PAGE */
+
+body,html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	font-family: 'Rubik', sans-serif;
+	margin: 0;
+	color: #fff;
+	background-size: auto cover;
+	background-position: center center;
+	background-color: #0c0c0c;
+}
+
+#dimmer {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.6);
+}
+
+#fader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: #000;
+	pointer-events: none;
+	display: table;
+	
+	-webkit-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+#fader.active {
+	opacity: 1;
+	pointer-events: initial;
+}
+#fader > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 24px;
+}
+
+/* STRUCTURE */
+
+#center {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+#center > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#center > div > div {
+	overflow: auto;
+	max-height: 100%;
+	padding: 20px;
+}
+
+#container {
+	text-align: left;
+	display: inline-block;
+	min-width: 300px;
+}
+
+/* CLOCK */
+
+#clock {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+#clock > div:nth-child(1) {
+	font-size: 48px;
+	font-weight: bold;
+}
+.colon {
+	animation-name: colon;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+@keyframes colon {
+	0% {opacity:0;}
+	50% {opacity:1;}
+	100% {opacity:0;}
+}
+#clock > div:nth-child(2) {
+	font-size: 24px;
+}
+
+/* CLOCK PROGRESS BARS */
+
+#clock-progress-bars .progress:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#clock-progress-bars .progress:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.progress {
+	width: 200px;
+	height: 10px;
+	display: inline-block;
+	background-color: #c3c3c3;
+	overflow: hidden;
+}
+.progress > div {
+	width: 0%;
+	height: 100%;
+	background: linear-gradient(#0069ff, #004ebd);
+	-webkit-transition: width 0.25s;
+	transition: width 0.25s;
+}
+
+/* LINKS */
+
+#links {
+	text-align: left;
+	display: inline-table;
+	margin-top: 10px;
+	border-spacing: 20px;
+}
+#links td {
+	line-height: 25px;
+	min-width: 100px;
+	vertical-align: top;
+}
+#links .header {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #fff;
+	font-size: 20px;
+	text-transform: lowercase;
+	margin-left: 5px;
+}
+#links a, .hover-effect > div {
+	color: #fff;
+	text-decoration: none;
+	text-transform: lowercase;
+	display: inline-block;
+	width: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#links a > img, .hover-effect > div > img {
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 16px;
+	height: 16px;
+}
+#links a > span, .hover-effect > div > span {
+	vertical-align: bottom;
+}
+
+#links a {
+	position: relative;
+	z-index: 1;
+}
+#links a:hover .hover-effect, #links a:hover::after {
+	height: 100%;
+}
+.hover-effect, #links a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+
+	transition: height .25s;
+	-webkit-transition: height .25s;
+	-moz-transition: height .25s;
+	-o-transition: height .25s;
+}
+.hover-effect > div {
+	color: #000;
+}
+
+#links a .hover-effect {
+	top: 0;
+}
+
+#links a::after {
+	background-color: #fff;
+	z-index: -1;
+	bottom: 0;
+}
