@@ -6,7 +6,7 @@ New Tab page I made for myself which people were asking to be open-sourced.
 
 First, clone/download the repository somewhere to your computer
 
-Then, install a New Tab page changer extension/plugin for your browser:
+Then, install a New Tab page changer extension/plugin for your browser, if necessary:
 
 * Chrome - https://chrome.google.com/webstore/detail/change-new-tab/mocklpfdimiadpbgamlgehpgpodggahe
 * Firefox - https://addons.mozilla.org/firefox/addon/new-tab-override/
