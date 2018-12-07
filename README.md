@@ -22,3 +22,23 @@ Open `config.js` and add your own categories and links using the template provid
 ![](https://i.imgur.com/44wQ4Mj.jpg)
 
 ![](https://i.imgur.com/MOwfx2a.gif)
+
+### FAQ
+
+**What are the three progress bars?**
+
+The first progress bar represents the progress of the current day.
+
+The second progress bar represents the progress of the current hour.
+
+The third progress bar represents the progress of the current minute.
+
+**Where are the icons stored?**
+
+`assets/img/icons/`
+
+**How do I change the wallpaper(s)?**
+
+The wallpaper changes based upon the current weekday.
+
+You can find them in `assets/img/wallpaper/`
