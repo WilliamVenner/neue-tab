@@ -21,7 +21,9 @@ function update_time() {
 
 	$(date).text(week_days[d.getDay()] + " " + padZeroes(d.getDate()) + "/" + padZeroes(d.getMonth() + 1) + "/" + d.getFullYear());
 
-	if (d.getHours() > 12) {
+	if (d.getHours() == 0) {
+		$(hour).text("12");
+	} else if (d.getHours() > 12) {
 		$(hour).text(padZeroes(d.getHours() % 12));
 	} else {
 		$(hour).text(padZeroes(d.getHours()));
