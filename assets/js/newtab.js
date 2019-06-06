@@ -8,6 +8,7 @@ let am_pm  = "#am-pm";
 let fader  = "#fader";
 
 let week_days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 function padZeroes(n) {
 	if (String(n).length == 1) {
@@ -16,10 +17,23 @@ function padZeroes(n) {
 		return n;
 	}
 }
+function ordinal(n) {
+	if (n >= 11 && n <= 13) return n + "th";
+	switch(String(n).substr(-1,1)) {
+		case "1":
+			return n + "st";
+		case "2":
+			return n + "nd";
+		case "3":
+			return n + "rd";
+		default:
+			return n + "th";
+	}
+}
 function update_time() {
 	var d = new Date();
 
-	$(date).text(week_days[d.getDay()] + " " + padZeroes(d.getDate()) + "/" + padZeroes(d.getMonth() + 1) + "/" + d.getFullYear());
+	$(date).text(week_days[d.getDay()] + " " + ordinal(d.getDate()) + " " + months[d.getMonth()] + " " + d.getFullYear());
 
 	if (d.getHours() == 0) {
 		$(hour).text("12");
